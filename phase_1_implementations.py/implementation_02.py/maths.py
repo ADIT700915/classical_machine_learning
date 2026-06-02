@@ -13,10 +13,8 @@ print(probability(1, 6))
 # CONDITIONAL PROBABILITY
 # P(B∣A)=P(A∩B) / P(A) ;that is,probability of occurence of an event B provided that event has 
 # occured is equal to prob.of occurence of both the events divided by prob of occ. of A only
-
 def conditional_probability(intersection, event_a):# intersection parameter stores prob. of occ. of both 
     return intersection / event_a
-
 
 print(conditional_probability(0.2, 0.5))
 
@@ -43,9 +41,7 @@ distribution = {
     1000: 0.1}
 print(expectation(distribution))
 
-
 # VARIANCE
-
 def variance(arr):
     mu = mean(arr)
 
