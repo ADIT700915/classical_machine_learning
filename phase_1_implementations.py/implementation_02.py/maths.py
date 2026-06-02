@@ -3,7 +3,7 @@ import numpy as np
 import math
 
 # PROBABILITY OF AN EVENT
-#It is a measure of how likely an event is to occur.
+#it is a measure of how likely an event is to occur.
 #mathematically, it is defined as the ratio of no. of favorable outcomes to total no. of outcomes.
 def probability(favorable, total):
     return favorable / total
@@ -23,6 +23,26 @@ print(conditional_probability(0.2, 0.5))
 # MEAN : mean is the sum of all values divided by the total no. of values
 def mean(arr):
     return sum(arr) / len(arr)
+
+# EXPECTATION 
+#it is the long-run average outcome of a random process; 
+#if a large sample is taken,then it is referred as weighted average of the outcome
+#the expected value is not necessarily a possible outcome
+def expectation(distribution):
+
+    total = 0
+
+    for value, probability in distribution.items():
+
+        total += value * probability
+
+    return total
+
+distribution = {
+    100: 0.9,
+    1000: 0.1}
+print(expectation(distribution))
+
 
 # VARIANCE
 
