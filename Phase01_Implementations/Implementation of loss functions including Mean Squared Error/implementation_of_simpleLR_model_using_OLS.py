@@ -54,5 +54,5 @@ plt.plot(X_test,lr.predict(X_test),color='red')
 plt.xlabel('HOURS')
 plt.ylabel('SCORES (OUT OF 100)')
 plt.text(3,-8,'SCORES (OUT OF 100) vs HOURS OF STUDY')
+plt.savefig("graph.png")
 plt.show()
-
