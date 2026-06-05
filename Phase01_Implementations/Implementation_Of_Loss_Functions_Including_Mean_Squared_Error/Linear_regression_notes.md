@@ -130,46 +130,48 @@ To find the minimum SSE, take the partial derivative with respect to $b$ and set
 
 ### Derivative
 
-$$
+```math
 \frac{\partial SSE}{\partial b}
 =
 \frac{\partial}{\partial b}
 \sum_{i=1}^{n}
 (y_i - mx_i - b)^2
-$$
+```
+
 
 Applying the chain rule:
 
-$$
+```math
 \frac{\partial SSE}{\partial b}
 =
 -2
 \sum_{i=1}^{n}
 (y_i - mx_i - b)
-$$
+
+```
 
 Setting the derivative equal to zero:
 
-$$
+```math
 -2
 \sum_{i=1}^{n}
 (y_i - mx_i - b)
 =
 0
-$$
+```
 
 Removing the constant:
 
-$$
+```math
 \sum_{i=1}^{n}
 (y_i - mx_i - b)
 =
 0
-$$
+```
 
 Expanding:
 
-$$
+```math
 \sum y_i
 -
 m \sum x_i
@@ -177,39 +179,39 @@ m \sum x_i
 nb
 =
 0
-$$
+```
 
 Solving for $b$:
 
-$$
+```math
 b
 =
 \frac{\sum y_i - m \sum x_i}{n}
-$$
+```
 
 Using the definitions:
 
-$$
+```math
 \bar{x}
 =
 \frac{\sum x_i}{n}
-$$
+```
 
-$$
+```math
 \bar{y}
 =
 \frac{\sum y_i}{n}
-$$
+```
 
 we obtain:
 
-$$
+```math
 b
 =
 \bar{y}
 -
 m\bar{x}
-$$
+```
 
 ---
 
@@ -217,45 +219,45 @@ $$
 
 Starting from:
 
-$$
+```math
 SSE
 =
 \sum_{i=1}^{n}
 (y_i - mx_i - b)^2
-$$
+```
 
 Differentiate with respect to $m$:
 
-$$
+```math
 \frac{\partial SSE}{\partial m}
 =
 -2
 \sum_{i=1}^{n}
 x_i(y_i - mx_i - b)
-$$
+```
 
 Setting the derivative equal to zero:
 
-$$
+```math
 -2
 \sum_{i=1}^{n}
 x_i(y_i - mx_i - b)
 =
 0
-$$
+```
 
 Removing the constant:
 
-$$
+```math
 \sum_{i=1}^{n}
 x_i(y_i - mx_i - b)
 =
 0
-$$
+```
 
 Expanding:
 
-$$
+```math
 \sum x_i y_i
 -
 m \sum x_i^2
@@ -263,17 +265,17 @@ m \sum x_i^2
 b \sum x_i
 =
 0
-$$
+```
 
 Substitute:
 
-$$
+```math
 b = \bar{y} - m\bar{x}
-$$
+```
 
 into the equation:
 
-$$
+```math
 \sum x_i y_i
 -
 m \sum x_i^2
@@ -281,17 +283,17 @@ m \sum x_i^2
 (\bar{y}-m\bar{x})\sum x_i
 =
 0
-$$
+```
 
 Since:
 
-$$
+```math
 \sum x_i = n\bar{x}
-$$
+```
 
 we get:
 
-$$
+```math
 \sum x_i y_i
 -
 m \sum x_i^2
@@ -301,11 +303,11 @@ n\bar{x}\bar{y}
 mn\bar{x}^2
 =
 0
-$$
+```
 
 Rearranging:
 
-$$
+```math
 m
 \left(
 \sum x_i^2
@@ -316,11 +318,11 @@ n\bar{x}^2
 \sum x_i y_i
 -
 n\bar{x}\bar{y}
-$$
+```
 
 Therefore:
 
-$$
+```math
 m
 =
 \frac{
@@ -332,7 +334,7 @@ n\bar{x}\bar{y}
 -
 n\bar{x}^2
 }
-$$
+```
 
 ---
 
@@ -340,27 +342,27 @@ $$
 
 Using:
 
-$$
+```math
 \sum (x_i-\bar{x})(y_i-\bar{y})
 =
 \sum x_i y_i
 -
 n\bar{x}\bar{y}
-$$
+```
 
 and
 
-$$
+```math
 \sum (x_i-\bar{x})^2
 =
 \sum x_i^2
 -
 n\bar{x}^2
-$$
+```
 
 the slope becomes:
 
-$$
+```math
 m
 =
 \frac{
@@ -368,7 +370,7 @@ m
 }{
 \sum (x_i-\bar{x})^2
 }
-$$
+```
 
 ---
 
@@ -376,7 +378,7 @@ $$
 
 ## Slope
 
-$$
+```math
 m
 =
 \frac{
@@ -384,19 +386,19 @@ m
 }{
 \sum (x_i-\bar{x})^2
 }
-$$
+```
 
 ---
 
 ## Intercept
 
-$$
+```math
 b
 =
 \bar{y}
 -
 m\bar{x}
-$$
+```
 
 ---
 
@@ -404,12 +406,12 @@ $$
 
 The slope can also be written as:
 
-$$
+```math
 m
 =
 \frac{\text{Cov}(X,Y)}
 {\text{Var}(X)}
-$$
+```
 
 This means:
 
@@ -451,11 +453,11 @@ print("Intercept (b):", b)
 
 Once the values of $m$ and $b$ are known, predictions can be made using:
 
-$$
+```math
 \hat{y}
 =
 mx + b
-$$
+```
 
 Example:
 
@@ -491,16 +493,16 @@ Linear Regression attempts to find the best-fit straight line through a dataset.
 
 The Ordinary Least Squares method achieves this by minimizing the Sum of Squared Errors:
 
-$$
+```math
 SSE
 =
 \sum_{i=1}^{n}
 (y_i - mx_i - b)^2
-$$
+```
 
 The resulting estimators are:
 
-$$
+```math
 m
 =
 \frac{
@@ -508,14 +510,14 @@ m
 }{
 \sum (x_i-\bar{x})^2
 }
-$$
+```
 
-$$
+```math
 b
 =
 \bar{y}
 -
 m\bar{x}
-$$
+```
 
 These values define the regression line that best explains the relationship between the feature and the target according to the least-squares criterion.
