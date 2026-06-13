@@ -10,9 +10,6 @@ Therefore in scientific computing, solve() is preferred.
 
 """
 
-
-
-
 import numpy as np
 
 class RidgeRegression:
