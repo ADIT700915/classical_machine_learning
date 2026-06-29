@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Feature matrix (Height, Weight)
 X = np.array([
@@ -16,6 +17,7 @@ y = np.array([
     [0]
 ])
 
+losses = []
 
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
@@ -32,7 +34,7 @@ b = 0
  weight receives a different gradient from different input features i.e. there is no 
 symmetry problem '''
 
-learning_rate = 0.01
+learning_rate = 0.0001 # Learning rate earlier = 0.01 ,0.001 
 epochs = 1000
 
 for epoch in range(epochs):
@@ -58,6 +60,7 @@ for epoch in range(epochs):
         y*np.log(y_hat) +
         (1-y)*np.log(1-y_hat)
     )
+    losses.append(loss)
 
     # Gradients
     dw = (1/m) * np.dot(X.T, (y_hat - y))
@@ -93,3 +96,17 @@ because it is built into these libraries while the latter converts an individual
 
 accuracy = np.mean(predictions == y)
 print("Accuracy:", accuracy)
+
+# The Learning Curve (Loss vs Epochs)
+# to improve learning rate
+plt.figure(figsize=(8, 5))
+
+plt.plot(losses)
+
+plt.title("Learning Curve")
+plt.xlabel("Epoch")
+plt.ylabel("Binary Cross-Entropy Loss")
+
+plt.grid(True)
+
+plt.show()
